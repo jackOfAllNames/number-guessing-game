@@ -1,38 +1,30 @@
 import random
+from user_guess_selection import difficulty_selection, displayGameMenu
 
-guess = random.randint(1, 5)
+def main():
 
-print(f"Welcome to the Number Guessing Game!\n"
-      f"I'm thinking of a number between 1 and 100.\n"
-      f"You have 5 chances to guess the correct number.\n")
+    displayGameMenu()
+    chances = difficulty_selection()
+    tries = chances
+    guess = random.randint(1, 5)
 
-print(f"Please select the difficulty level:\n"
-      f"1. Easy (10 chances)\n"
-      f"2. Medium (5 chances)\n"
-      f"3. Hard (3 chances)\n")
+    while chances > 0:
+        print(guess)
+        user_guess = int(input("Enter your guess: "))
+        
+        if user_guess > guess:
+            chances -= 1
+            print(f"Incorrect! The number is less than {user_guess}.")
+        elif user_guess < guess:
+            chances -= 1
+            print(f"Incorrect! The number is greater than {user_guess}.")
+        else:
+            chances -= 1
+            print(f"Congratulations! You guessed the correct number in {tries - chances} attempt(s).")
+            return
 
-difficulty = input("Enter your choice: ")
-chances = 0
+    if not chances:
+        print("Game over\nGoodbye!")
 
-match difficulty:
-    case "1":
-        level = "Easy"
-        chances = 10
-        print(f"Great! You have selected the {level} difficulty level.")
-    case "2":
-        level = "Medium"
-        chances = 5
-        print(f"Great! You have selected the {level} difficulty level.")
-    case "3":
-        level = "Hard"
-        chances = 3
-        print(f"\nGreat! You have selected the {level} difficulty level.\n"
-              f"Let's start the game!\n")
-    case _:
-        print("Invalid value entered!")
-
-user_guess = input("Enter your guess: ")
-
-
-print(f"guess: ${guess}")
-print(f"guess: ${difficulty}")
+if __name__ == "__main__":
+    main()
