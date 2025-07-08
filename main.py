@@ -7,7 +7,7 @@ def main():
         displayGameMenu()
         chances = difficulty_selection()
         tries = chances
-        guess = random.randint(1, 5)
+        guess = random.randint(1, 100)
 
         while chances > 0:
             print(guess)
