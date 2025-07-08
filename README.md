@@ -11,7 +11,7 @@ A quick command‑line game where the program thinks of a secret number and you 
 3. [Running the Game](#running-the-game)
 4. [Project Structure](#project-structure)
 5. [Contributing](#contributing)
-6. [License](#license)
+6. [Acknowledgements](#acknowledgements)
 
 ## Features
 
@@ -30,3 +30,56 @@ cd number-guessing-game
 # run with any recent Python 3
 python main.py
 ```
+
+## Running the Game
+
+```bash
+Welcome to the Number Guessing Game!
+I'm thinking of a number between 1 and 100.
+You have 5 chances to guess the correct number.
+
+Please select the difficulty level:
+1. Easy (10 chances)
+2. Medium (5 chances)
+3. Hard (3 chances)
+
+Enter your choice: 2
+Great! You have selected the Medium difficulty level.
+Let's start the game!
+
+Enter your guess: 42
+Incorrect! The number is less than 42.
+...
+Congratulations! You guessed the correct number in 4 attempt(s).
+
+```
+
+Tips:
+
+- Use the hints to narrow your next guess quickly.
+- Medium is a good place to start, hard is a real challenge.
+
+## Project Structure
+
+```bash
+number‑guessing‑game/
+│
+├── main.py # game entry point
+└── user_guess_selection.py # menu display and difficulty handling
+```
+
+## Contributing
+
+Pull requests are welcome. For major changes, please open an issue first so we can discuss what you would like to change.
+
+1. Fork the repository
+2. Create your feature branch git checkout -b feature/awesome‑idea
+3. Commit your changes git commit -m "Add awesome idea"
+4. Push to the branch git push origin feature/awesome‑idea
+5. Open a pull request
+
+Thank you for considering contributing to this project!
+
+## Acknowledgements
+
+This game was inspired by [roadmap.sh number guessing games](https://roadmap.sh/projects/number-guessing-game) and is a fun way to practice Python programming skills.
